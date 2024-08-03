@@ -22,7 +22,7 @@ const StyledApp = styled.div`
 `;
 
 const fetchMyData = async () => {
-  const response = await axios.get('http://localhost:3000/');
+  const response = await axios.get('http://localhost:3000/'); // need to be passed from config
   return response.data;
 };
 
