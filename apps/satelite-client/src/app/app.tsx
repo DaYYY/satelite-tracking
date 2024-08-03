@@ -31,7 +31,7 @@ export function App() {
     new Map()
   );
 
-  const { data, error, isLoading } = useQuery<SatelliteData, boolean>(
+  const { data, error, isLoading, refetch  } = useQuery<SatelliteData, boolean>(
     'satelite',
     fetchMyData,
     {
@@ -60,6 +60,8 @@ export function App() {
 
   return (
     <StyledApp>
+      <button onClick={() => refetch()} disabled={isLoading}> manually request data</button>
+      {data&&<span>last update: {data?.timestamp}</span>}
       <MapContainer
         center={[0, 0]}
         zoom={1}

@@ -7,6 +7,7 @@ const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 const app = express();
 
 app.use(cors()); 
+// do we need specific url name?
 app.get('/', (req, res) => {
   axios
     .get('http://api.open-notify.org/iss-now.json')
